@@ -18,7 +18,9 @@ class ShowViewController: UIViewController {
     
     @IBAction func ButtonShowAppintment(_ sender: UIButton) {
         
+        let trancfer = storyboard?.instantiateViewController(withIdentifier: "Conect") as! ViewController
         
+        navigationController?.show(trancfer, sender: self)
     }
     
     @IBAction func showResult(_ sender: UIButton) {
