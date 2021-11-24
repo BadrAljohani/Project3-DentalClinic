@@ -35,6 +35,9 @@ class ShowViewController: UIViewController {
     
     
     @IBAction func ButtonDoctorPatients(_ sender: UIButton) {
+       // patinet.drName?.filter{}
+        let filterBya = NSPredicate(format: "drName CONTAINS 'Dr Ahmad'")
+        print(patinet)
 //        navigationController?.popViewController(animated: true)
         
 //         navigationController?.pushViewController(DoctorHomeScreen, animated: true)
