@@ -16,9 +16,18 @@ class PatientDetals: UIViewController {
     }
     
     @IBOutlet weak var prescription: UITextView!
+    @IBOutlet weak var LableComlanin: UILabel!
+    @IBOutlet weak var LableEmail: UILabel!
+    @IBOutlet weak var Labelphone: UILabel!
+    @IBOutlet weak var LableID: UILabel!
+    @IBOutlet weak var LabelName: UILabel!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
         // Do any additional setup after loading the view.
     }
     
