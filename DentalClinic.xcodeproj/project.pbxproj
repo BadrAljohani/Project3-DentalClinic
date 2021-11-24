@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		B93458CE274D03F300276126 /* DoctorHomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93458CD274D03F300276126 /* DoctorHomeScreen.swift */; };
 		B93458D0274D071D00276126 /* PatientDetals.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93458CF274D071C00276126 /* PatientDetals.swift */; };
+		B954678B274E14A200E6745D /* PatientResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = B954678A274E14A200E6745D /* PatientResult.swift */; };
 		B97EBDD127490E2600D9E52F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97EBDD027490E2600D9E52F /* AppDelegate.swift */; };
 		B97EBDD327490E2600D9E52F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97EBDD227490E2600D9E52F /* SceneDelegate.swift */; };
 		B97EBDD527490E2600D9E52F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97EBDD427490E2600D9E52F /* ViewController.swift */; };
@@ -22,6 +23,7 @@
 /* Begin PBXFileReference section */
 		B93458CD274D03F300276126 /* DoctorHomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorHomeScreen.swift; sourceTree = "<group>"; };
 		B93458CF274D071C00276126 /* PatientDetals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientDetals.swift; sourceTree = "<group>"; };
+		B954678A274E14A200E6745D /* PatientResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientResult.swift; sourceTree = "<group>"; };
 		B97EBDCD27490E2600D9E52F /* DentalClinic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DentalClinic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B97EBDD027490E2600D9E52F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B97EBDD227490E2600D9E52F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -68,6 +70,7 @@
 				B97EBDD227490E2600D9E52F /* SceneDelegate.swift */,
 				B97EBDD427490E2600D9E52F /* ViewController.swift */,
 				B97EBDD627490E2600D9E52F /* Main.storyboard */,
+				B954678A274E14A200E6745D /* PatientResult.swift */,
 				B93458CF274D071C00276126 /* PatientDetals.swift */,
 				B93458CD274D03F300276126 /* DoctorHomeScreen.swift */,
 				B97EBDE72749619E00D9E52F /* ShowViewController.swift */,
@@ -152,6 +155,7 @@
 			files = (
 				B97EBDE82749619E00D9E52F /* ShowViewController.swift in Sources */,
 				B93458D0274D071D00276126 /* PatientDetals.swift in Sources */,
+				B954678B274E14A200E6745D /* PatientResult.swift in Sources */,
 				B97EBDD527490E2600D9E52F /* ViewController.swift in Sources */,
 				B97EBDDB27490E2600D9E52F /* Project3_Try.xcdatamodeld in Sources */,
 				B93458CE274D03F300276126 /* DoctorHomeScreen.swift in Sources */,

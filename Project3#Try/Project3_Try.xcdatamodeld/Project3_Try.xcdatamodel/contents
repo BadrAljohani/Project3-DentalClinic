@@ -1,20 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19206" systemVersion="20G165" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="Doctors" representedClassName="Doctors" syncable="YES" codeGenerationType="class">
-        <attribute name="clinicNumber" optional="YES" attributeType="String"/>
-        <attribute name="dName" optional="YES" attributeType="String"/>
-        <relationship name="doctorRelationship" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Patients" inverseName="patientRelationship" inverseEntity="Patients"/>
-    </entity>
     <entity name="Patients" representedClassName="Patients" syncable="YES" codeGenerationType="class">
+        <attribute name="consult" optional="YES" attributeType="String"/>
         <attribute name="drName" optional="YES" attributeType="String"/>
         <attribute name="email" optional="YES" attributeType="String"/>
+        <attribute name="issue" optional="YES" attributeType="String"/>
         <attribute name="phoneNumber" optional="YES" attributeType="String"/>
         <attribute name="pId" optional="YES" attributeType="String"/>
         <attribute name="pName" optional="YES" attributeType="String"/>
-        <relationship name="patientRelationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Doctors" inverseName="doctorRelationship" inverseEntity="Doctors"/>
     </entity>
     <elements>
-        <element name="Doctors" positionX="51.40234375" positionY="-112.93359375" width="128" height="88"/>
-        <element name="Patients" positionX="41.921875" positionY="146.4296875" width="128" height="119"/>
+        <element name="Patients" positionX="41.921875" positionY="146.4296875" width="128" height="148"/>
     </elements>
 </model>
