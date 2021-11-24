@@ -9,6 +9,7 @@ import UIKit
 
 class ShowViewController: UIViewController {
 
+    var patinet = Patients ()
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -19,6 +20,17 @@ class ShowViewController: UIViewController {
         
         
     }
+    
+    @IBAction func showResult(_ sender: UIButton) {
+        
+        
+        
+    }
+    
+    
+    
+    
+    
     
     @IBAction func ButtonDoctorPatients(_ sender: UIButton) {
 //        navigationController?.popViewController(animated: true)

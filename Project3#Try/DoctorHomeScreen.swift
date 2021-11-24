@@ -8,16 +8,22 @@
 import UIKit
 
 class DoctorHomeScreen: UIViewController , UITableViewDelegate, UITableViewDataSource {
-    var array = [String]()
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    
+    @IBOutlet weak var tableView: UITableView!
+    
+    
+    var patientList = [Patients]()
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        array.count
+        patientList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: .default, reuseIdentifier: nil)
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "patient", for: indexPath) as! DoctorHomeScreen
-//        cell.textLabel?.text = array[indexPath.row]
-//        array.append("aaaa")
+//        let cell = UITableViewCell(style: .default, reuseIdentifier: nil)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        cell.textLabel?.text = patientList[indexPath.row].pName
+        cell.detailTextLabel?.text = patientList[indexPath.row].pId
+        print(patientList)
         return cell
     }
     
@@ -26,11 +32,24 @@ class DoctorHomeScreen: UIViewController , UITableViewDelegate, UITableViewDataS
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        tableView.delegate = self
+        tableView.dataSource = self
+        fetchFromDBpatients()
         // Do any additional setup after loading the view.
     }
     
+    func fetchFromDBpatients() {
+    let request = Patients.fetchRequest()
+
+    do {
+        patientList =  try! context.fetch(request)
+    } catch {
+        print("enable to get data from DB")
+    }
+        
+    }
     
+
     
 }
-    
