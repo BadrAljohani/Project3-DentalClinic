@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vlu-Z6-Kjc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vlu-Z6-Kjc">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -455,7 +455,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="32z-Uq-TUf">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="32z-Uq-TUf">
                                 <rect key="frame" x="146" y="515" width="231" height="167"/>
                                 <color key="backgroundColor" red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="0.27596153210000002" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="textColor" systemColor="labelColor"/>
@@ -479,7 +479,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" restorationIdentifier="Complete" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jrl-Ib-tKt">
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" restorationIdentifier="Complete" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jrl-Ib-tKt">
                                 <rect key="frame" x="337" y="733" width="49" height="31"/>
                                 <connections>
                                     <action selector="complete:" destination="R7N-iY-U30" eventType="valueChanged" id="yvJ-4F-EGD"/>
@@ -542,6 +542,7 @@
                             <constraint firstItem="jrl-Ib-tKt" firstAttribute="leading" secondItem="LgX-QC-EbC" secondAttribute="trailing" constant="255" id="SNj-jp-jem"/>
                             <constraint firstItem="vXm-HH-2xV" firstAttribute="leading" secondItem="d0O-Fj-da3" secondAttribute="trailing" constant="60" id="TmX-hC-smj"/>
                             <constraint firstItem="Dh3-MJ-Osg" firstAttribute="bottom" secondItem="pcy-4g-A3b" secondAttribute="bottom" constant="27" id="V7T-t6-gpu"/>
+                            <constraint firstItem="jrl-Ib-tKt" firstAttribute="top" secondItem="LgX-QC-EbC" secondAttribute="top" id="V9a-ix-LpF"/>
                             <constraint firstItem="Dh3-MJ-Osg" firstAttribute="trailing" secondItem="vXm-HH-2xV" secondAttribute="trailing" constant="29" id="XDi-03-rES"/>
                             <constraint firstItem="Dh3-MJ-Osg" firstAttribute="trailing" secondItem="JKg-n9-T1Z" secondAttribute="trailing" constant="32" id="XVK-Y8-MMj"/>
                             <constraint firstItem="Dh3-MJ-Osg" firstAttribute="trailing" secondItem="32z-Uq-TUf" secondAttribute="trailing" constant="37" id="bPi-jS-Kz3"/>
