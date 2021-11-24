@@ -57,10 +57,7 @@ class ViewController: UIViewController , UIImagePickerControllerDelegate & UINav
     } catch {
         print("enable to get data from DB")
     }
-        
-    }
-    
-    
+}
     @IBAction func addOnPreesed(_ sender: Any) {
         var indexForDoctor = segmentDoctor.selectedSegmentIndex
         if (indexForDoctor == 0) {
