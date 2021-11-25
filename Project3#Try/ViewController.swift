@@ -44,7 +44,6 @@ class ViewController: UIViewController , UIImagePickerControllerDelegate & UINav
     
     func fetchFromDBpatients() {
     let request = Patients.fetchRequest()
-
     do {
         patientArray =  try! context.fetch(request)
     } catch {
@@ -54,7 +53,7 @@ class ViewController: UIViewController , UIImagePickerControllerDelegate & UINav
     @IBAction func addOnPreesed(_ sender: Any) {
         
         if ((textFieldName.text) != nil) {
-            
+
         }
         
         let indexForDoctor = segmentDoctor.selectedSegmentIndex
@@ -81,12 +80,20 @@ class ViewController: UIViewController , UIImagePickerControllerDelegate & UINav
         newPatient.email = textFieldEmail.text
         newPatient.phoneNumber = textFieldNumber.text
         newPatient.issue = issue.text
+        
+//        if let textFieldName.text == textFieldID.text , textFieldNumber.text , textFieldEmail.text , issue.text.isEmpty == false {
+//
+            
+        
+
         do {
             try! context.save()
         }
             fetchFromDBpatients()
         print("it is in dataBase")
         print(newPatient.pName)
+        
+        
         self.navigationController?.popViewController(animated: true)
     }
 
