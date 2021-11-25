@@ -9,7 +9,7 @@ import UIKit
 
 class ShowViewController: UIViewController {
 
-    var patinet = Patients ()
+    var patinet = [Patients] ()
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -18,7 +18,7 @@ class ShowViewController: UIViewController {
     
     @IBAction func ButtonShowAppintment(_ sender: UIButton) {
         
-        let trancfer = storyboard?.instantiateViewController(withIdentifier: "Conect") as! ViewController
+        let trancfer = storyboard?.instantiateViewController(withIdentifier: "selectDoctor") as! SelectTheDoctor
         
         navigationController?.show(trancfer, sender: self)
     }
@@ -37,7 +37,8 @@ class ShowViewController: UIViewController {
     @IBAction func ButtonDoctorPatients(_ sender: UIButton) {
        // patinet.drName?.filter{}
         let filterBya = NSPredicate(format: "drName CONTAINS 'Dr Ahmad'")
-        print(patinet)
+        print(patinet.count)
+
 //        navigationController?.popViewController(animated: true)
         
 //         navigationController?.pushViewController(DoctorHomeScreen, animated: true)
