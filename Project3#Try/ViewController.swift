@@ -82,6 +82,7 @@ class ViewController: UIViewController , UIImagePickerControllerDelegate & UINav
         newPatient.email = textFieldEmail.text
         newPatient.phoneNumber = textFieldNumber.text
         newPatient.issue = issue.text
+        
         do {
             try! context.save()
         }
@@ -90,6 +91,8 @@ class ViewController: UIViewController , UIImagePickerControllerDelegate & UINav
         
         print(newPatient.pName)
         
+        self.dismiss(animated: true)
+           
         
         self.navigationController?.popViewController(animated: true)
     }

@@ -23,7 +23,7 @@ class DoctorHomeScreen: UIViewController , UITableViewDelegate, UITableViewDataS
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         cell.textLabel?.text = patientList[indexPath.row].pName
         cell.detailTextLabel?.text = patientList[indexPath.row].pId
-        print(patientList)
+        //print(patientList)
         return cell
     }
     
@@ -44,6 +44,8 @@ class DoctorHomeScreen: UIViewController , UITableViewDelegate, UITableViewDataS
 
     do {
         patientList =  try! context.fetch(request)
+        print(patientList)
+        
     } catch {
         print("enable to get data from DB")
     }
