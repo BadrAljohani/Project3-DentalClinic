@@ -1,51 +1,98 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vlu-Z6-Kjc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vlu-Z6-Kjc">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Select The Doctor-->
         <scene sceneID="sbu-lv-gBC">
             <objects>
-                <viewController id="GN6-JF-sKo" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="selectDoctor" id="GN6-JF-sKo" customClass="SelectTheDoctor" customModule="DentalClinic" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lHf-tf-VzA">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="49g-KT-see">
+                                <rect key="frame" x="0.0" y="44" width="414" height="414"/>
+                            </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Dr.Ahmad" translatesAutoresizingMaskIntoConstraints="NO" id="EjT-B0-2jJ">
+                                <rect key="frame" x="0.0" y="44" width="414" height="389"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="K5R-g5-jVs" appends="YES" id="Tqf-f5-Swe"/>
+                                </connections>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Dr.Mohammed" translatesAutoresizingMaskIntoConstraints="NO" id="2fV-Lp-Sil">
+                                <rect key="frame" x="0.0" y="458" width="414" height="404"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="7UX-cB-chJ" appends="YES" id="rL8-7e-uDc"/>
+                                </connections>
+                            </imageView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="7fy-3t-tup"/>
-                        <color key="backgroundColor" systemColor="systemPurpleColor"/>
+                        <color key="backgroundColor" systemColor="secondarySystemGroupedBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="49g-KT-see" firstAttribute="top" secondItem="7fy-3t-tup" secondAttribute="top" id="3f6-Ra-zI8"/>
+                            <constraint firstItem="EjT-B0-2jJ" firstAttribute="leading" secondItem="2fV-Lp-Sil" secondAttribute="leading" id="6mC-MH-h22"/>
+                            <constraint firstItem="2fV-Lp-Sil" firstAttribute="top" secondItem="7fy-3t-tup" secondAttribute="top" constant="414" id="Cbu-43-Bff"/>
+                            <constraint firstItem="EjT-B0-2jJ" firstAttribute="top" secondItem="7fy-3t-tup" secondAttribute="top" id="K2i-aA-f1Z"/>
+                            <constraint firstItem="EjT-B0-2jJ" firstAttribute="centerX" secondItem="lHf-tf-VzA" secondAttribute="centerX" id="PNW-AY-9tT"/>
+                            <constraint firstItem="7fy-3t-tup" firstAttribute="trailing" secondItem="49g-KT-see" secondAttribute="trailing" id="SRt-J7-3ED"/>
+                            <constraint firstItem="49g-KT-see" firstAttribute="leading" secondItem="7fy-3t-tup" secondAttribute="leading" id="TPx-W3-WsX"/>
+                            <constraint firstItem="2fV-Lp-Sil" firstAttribute="bottom" secondItem="7fy-3t-tup" secondAttribute="bottom" id="dhe-ua-S7i"/>
+                            <constraint firstItem="2fV-Lp-Sil" firstAttribute="top" secondItem="EjT-B0-2jJ" secondAttribute="bottom" constant="25" id="gdS-Gs-b2T"/>
+                            <constraint firstItem="EjT-B0-2jJ" firstAttribute="trailing" secondItem="2fV-Lp-Sil" secondAttribute="trailing" id="hIe-W2-hPD"/>
+                            <constraint firstItem="EjT-B0-2jJ" firstAttribute="leading" secondItem="7fy-3t-tup" secondAttribute="leading" id="hpY-MM-baj"/>
+                            <constraint firstItem="2fV-Lp-Sil" firstAttribute="top" secondItem="49g-KT-see" secondAttribute="bottom" id="joz-PQ-YFH"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="1uj-JF-L7e"/>
+                    <connections>
+                        <outlet property="drAhmadImage" destination="EjT-B0-2jJ" id="6sm-BO-b3G"/>
+                        <outlet property="drMohammadImage" destination="2fV-Lp-Sil" id="o2n-Z4-Uvv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V2L-fh-PXz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="K5R-g5-jVs" userLabel="Dr.Ahmad">
+                    <connections>
+                        <action selector="selectTheDrAhmad:" destination="GN6-JF-sKo" id="ovY-x0-RPL"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="7UX-cB-chJ" userLabel="Dr.Mohammad">
+                    <connections>
+                        <action selector="selectTheDrMohammad:" destination="GN6-JF-sKo" id="can-Up-lVz"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1745" y="-589"/>
+            <point key="canvasLocation" x="1744.9275362318842" y="-589.28571428571422"/>
         </scene>
         <!--Item-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="Conect" id="BYZ-38-t0r" customClass="ViewController" customModule="DentalClinic" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Conect" modalPresentationStyle="fullScreen" id="BYZ-38-t0r" customClass="ViewController" customModule="DentalClinic" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uQM-ee-XWh">
-                                <rect key="frame" x="71" y="257" width="270" height="34"/>
+                                <rect key="frame" x="71" y="213" width="270" height="34"/>
                                 <color key="backgroundColor" systemColor="systemGray4Color"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ID" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Eki-VO-XjG">
-                                <rect key="frame" x="71" y="318" width="270" height="34"/>
+                                <rect key="frame" x="71" y="274" width="270" height="34"/>
                                 <color key="backgroundColor" systemColor="systemGray4Color"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phone Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rIb-Yh-fFL">
-                                <rect key="frame" x="73" y="378" width="271" height="34"/>
+                                <rect key="frame" x="73" y="334" width="271" height="34"/>
                                 <color key="backgroundColor" systemColor="systemGray4Color"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -62,7 +109,7 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8Ta-oL-9GP">
-                                <rect key="frame" x="73" y="446" width="271" height="34"/>
+                                <rect key="frame" x="73" y="402" width="271" height="34"/>
                                 <color key="backgroundColor" systemColor="systemGray4Color"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -74,7 +121,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Application Form" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zun-Lh-sxo">
-                                <rect key="frame" x="85" y="154" width="247" height="41"/>
+                                <rect key="frame" x="85" y="110" width="247" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="34"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -297,7 +344,7 @@
         <!--Item-->
         <scene sceneID="xxm-bc-Jj2">
             <objects>
-                <viewController id="D1i-W7-1PU" customClass="ShowViewController" customModule="DentalClinic" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="patients" id="D1i-W7-1PU" customClass="ShowViewController" customModule="DentalClinic" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7GM-Fx-0ZH">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -330,7 +377,6 @@
                                 <buttonConfiguration key="configuration" style="tinted" title="show  Resolt"/>
                                 <connections>
                                     <action selector="showResult:" destination="D1i-W7-1PU" eventType="touchUpInside" id="olE-qQ-CZL"/>
-                                    <segue destination="ga0-mu-Dcb" kind="show" id="lIi-mm-BRN"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="patients" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ynN-bB-3lf">
@@ -456,7 +502,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="32z-Uq-TUf">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="32z-Uq-TUf">
                                 <rect key="frame" x="146" y="515" width="231" height="167"/>
                                 <color key="backgroundColor" red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="0.27596153210000002" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="textColor" systemColor="labelColor"/>
@@ -550,6 +596,7 @@
                             <constraint firstItem="jrl-Ib-tKt" firstAttribute="leading" secondItem="LgX-QC-EbC" secondAttribute="trailing" constant="230" id="SNj-jp-jem"/>
                             <constraint firstItem="vXm-HH-2xV" firstAttribute="leading" secondItem="d0O-Fj-da3" secondAttribute="trailing" constant="60" id="TmX-hC-smj"/>
                             <constraint firstItem="Dh3-MJ-Osg" firstAttribute="bottom" secondItem="pcy-4g-A3b" secondAttribute="bottom" constant="27" id="V7T-t6-gpu"/>
+                            <constraint firstItem="jrl-Ib-tKt" firstAttribute="top" secondItem="LgX-QC-EbC" secondAttribute="top" id="V9a-ix-LpF"/>
                             <constraint firstItem="Dh3-MJ-Osg" firstAttribute="trailing" secondItem="vXm-HH-2xV" secondAttribute="trailing" constant="29" id="XDi-03-rES"/>
                             <constraint firstItem="Dh3-MJ-Osg" firstAttribute="trailing" secondItem="JKg-n9-T1Z" secondAttribute="trailing" constant="32" id="XVK-Y8-MMj"/>
                             <constraint firstItem="Dh3-MJ-Osg" firstAttribute="trailing" secondItem="32z-Uq-TUf" secondAttribute="trailing" constant="37" id="bPi-jS-Kz3"/>
@@ -588,17 +635,19 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Dr.Ahmad" width="1125" height="643"/>
+        <image name="Dr.Mohammed" width="1125" height="1123"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="secondarySystemGroupedBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGray4Color">
             <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemPurpleColor">
-            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
