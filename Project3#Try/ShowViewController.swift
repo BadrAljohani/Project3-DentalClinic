@@ -9,13 +9,36 @@ import UIKit
 
 class ShowViewController: UIViewController {
 
-    var patinet = Patients ()
+//    var drArray = [Patients]()
+    
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    
+    var patinet = [Patients]()
+
+    func fetchFromDBpatients() {
+        let request = Patients.fetchRequest()
+        
+
+        //Filtering
+        let filterDr = NSPredicate(format: "name contains 'Dr Ahmad' OR 'Dr Mohamad'")
+        request.predicate = filterDr
+
+        
+        do {
+            try! patinet = context.fetch(request)
+            
+        }
+//    do {
+//        patientArray =  try! context.fetch(request)
+//    } catch {
+//        print("enable to get data from DB")
+//    }
+}
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
-    
     @IBAction func ButtonShowAppintment(_ sender: UIButton) {
         
         let trancfer = storyboard?.instantiateViewController(withIdentifier: "Conect") as! ViewController
@@ -24,23 +47,39 @@ class ShowViewController: UIViewController {
     }
     
     @IBAction func showResult(_ sender: UIButton) {
-        
-        
+
         
     }
-    
-    
-    
-    
-    
-    
+
+    @IBOutlet weak var DoctorFilter: UITextField!
     @IBAction func ButtonDoctorPatients(_ sender: UIButton) {
-       // patinet.drName?.filter{}
-        let filterBya = NSPredicate(format: "drName CONTAINS 'Dr Ahmad'")
-        print(patinet)
-//        navigationController?.popViewController(animated: true)
         
+//        let DoctorList = patinet
+//
+//           DoctorList.drName = DoctorFilter.text
+//        DoctorList.id =DoctorFilter.text
+//        do { try! context.save()}
+//        fetchFromDBpatients()
+//        print(patinet)
+//    }
+//    func  {
+//        let filterBya = NSPredicate(format: "drName CONTAINS 'Dr Ahmad' OR 'Dr Mohamad'")
+//
+//}
+//       
+//                let filterByA = NSPredicate(format: "name CONTAINS[cd]  'A'")
+//                request.predicate = filterByA
+//    
+//        
+//
+//    
+//        navigationController?.popViewController(animated: true)
+//        
 //         navigationController?.pushViewController(DoctorHomeScreen, animated: true)
-    }
-    
+//
+
+
 }
+}
+
+

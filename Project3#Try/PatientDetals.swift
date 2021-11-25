@@ -8,11 +8,32 @@
 import UIKit
 
 class PatientDetals: UIViewController {
-
+    
+    var ppp: Patients?
+    
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+//    var pName:String = ""
+//    var pId:String = ""
+//    var email:String = ""
+//    var phoneNuber:String = ""
+//    var issue:String = ""
+//    var status : String = ""
+    
+    @IBOutlet weak var statusLable: UILabel!
+    
     @IBAction func DoctorSubmit(_ sender: UIButton) {
+        
+        
     }
     
     @IBAction func complete(_ sender: Any) {
+//        UserDefaults.standard.set(complete.isOn, forKey: "Status")
+//        if (complete.isOn){
+//            statusLable.text = "Complete"
+//        } else {
+//            statusLable.text = "Not Complete"
+//        }
+//
     }
     
     @IBOutlet weak var prescription: UITextView!
@@ -26,10 +47,16 @@ class PatientDetals: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        
+        
         
         // Do any additional setup after loading the view.
     }
+    
+    Labelphone.text = ppp
+    
+    
     
 
     /*
