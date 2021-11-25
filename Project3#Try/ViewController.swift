@@ -100,7 +100,7 @@ class ViewController: UIViewController , UIImagePickerControllerDelegate & UINav
         // send patiant data to PatiantDetails
         if segue.identifier == "s"{
             let patiantD = segue.destination as! PatientDetals
-            patiantD.pName =
+          //  patiantD.pName =
         }
     }
 }
