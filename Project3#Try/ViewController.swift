@@ -13,7 +13,7 @@ class ViewController: UIViewController , UIImagePickerControllerDelegate & UINav
     var patientArray = [Patients]()
 //    var doctorsArray = [Doctors]()
     
-    @IBOutlet weak var textFieldName: UITextField!
+        @IBOutlet weak var textFieldName: UITextField!
     @IBOutlet weak var textFieldID: UITextField!
     @IBOutlet weak var textFieldNumber: UITextField!
     @IBOutlet weak var textFieldEmail: UITextField!
@@ -43,9 +43,11 @@ class ViewController: UIViewController , UIImagePickerControllerDelegate & UINav
     }
     
     func fetchFromDBpatients() {
+        
     let request = Patients.fetchRequest()
     do {
         patientArray =  try! context.fetch(request)
+        
     } catch {
         print("enable to get data from DB")
     }
@@ -80,21 +82,25 @@ class ViewController: UIViewController , UIImagePickerControllerDelegate & UINav
         newPatient.email = textFieldEmail.text
         newPatient.phoneNumber = textFieldNumber.text
         newPatient.issue = issue.text
-        
-//        if let textFieldName.text == textFieldID.text , textFieldNumber.text , textFieldEmail.text , issue.text.isEmpty == false {
-//
-            
-        
-
         do {
             try! context.save()
         }
             fetchFromDBpatients()
         print("it is in dataBase")
+        
         print(newPatient.pName)
         
         
         self.navigationController?.popViewController(animated: true)
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        let patientD = storyboard?.instantiateViewController(withIdentifier: "pPatientDetalsVCId") as! PatientDetals
+        
+        // send patiant data to PatiantDetails
+        if segue.identifier == "s"{
+            let patiantD = segue.destination as! PatientDetals
+            patiantD.pName =
+        }
+    }
 }

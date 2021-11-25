@@ -425,6 +425,10 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="9Kp-lX-wXe"/>
                     <navigationItem key="navigationItem" id="AwE-eN-45L"/>
+                    <connections>
+                        <outlet property="DoctorFilter" destination="Tbt-Wk-SQF" id="1lA-cu-0o8"/>
+                        <segue destination="BYZ-38-t0r" kind="show" id="dPA-JM-h5K"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T5W-Eu-DOi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -433,7 +437,7 @@
         <!--Patient Detals-->
         <scene sceneID="ifs-p9-L0V">
             <objects>
-                <viewController id="R7N-iY-U30" customClass="PatientDetals" customModule="DentalClinic" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PatientDetalsVC" id="R7N-iY-U30" customClass="PatientDetals" customModule="DentalClinic" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="msT-YE-rfS">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -489,10 +493,10 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Statis" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LgX-QC-EbC">
-                                <rect key="frame" x="38" y="733" width="44" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LgX-QC-EbC">
+                                <rect key="frame" x="38" y="733" width="64" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="44" id="mRb-IE-O8J"/>
+                                    <constraint firstAttribute="width" constant="64" id="mRb-IE-O8J"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -522,8 +526,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" restorationIdentifier="Complete" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jrl-Ib-tKt">
-                                <rect key="frame" x="337" y="733" width="49" height="31"/>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" restorationIdentifier="Complete" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jrl-Ib-tKt">
+                                <rect key="frame" x="332" y="733" width="54" height="31"/>
                                 <connections>
                                     <action selector="complete:" destination="R7N-iY-U30" eventType="valueChanged" id="yvJ-4F-EGD"/>
                                 </connections>
@@ -558,6 +562,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ymc-ro-sZC">
+                                <rect key="frame" x="156" y="733" width="162" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Dh3-MJ-Osg"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -582,7 +593,7 @@
                             <constraint firstItem="Dh3-MJ-Osg" firstAttribute="trailing" secondItem="jrl-Ib-tKt" secondAttribute="trailing" constant="30" id="Oiw-QZ-DXg"/>
                             <constraint firstItem="LgX-QC-EbC" firstAttribute="leading" secondItem="Dh3-MJ-Osg" secondAttribute="leading" constant="38" id="PGt-Es-wHJ"/>
                             <constraint firstItem="jrl-Ib-tKt" firstAttribute="top" secondItem="32z-Uq-TUf" secondAttribute="bottom" constant="51" id="QGH-wH-9Ws"/>
-                            <constraint firstItem="jrl-Ib-tKt" firstAttribute="leading" secondItem="LgX-QC-EbC" secondAttribute="trailing" constant="255" id="SNj-jp-jem"/>
+                            <constraint firstItem="jrl-Ib-tKt" firstAttribute="leading" secondItem="LgX-QC-EbC" secondAttribute="trailing" constant="230" id="SNj-jp-jem"/>
                             <constraint firstItem="vXm-HH-2xV" firstAttribute="leading" secondItem="d0O-Fj-da3" secondAttribute="trailing" constant="60" id="TmX-hC-smj"/>
                             <constraint firstItem="Dh3-MJ-Osg" firstAttribute="bottom" secondItem="pcy-4g-A3b" secondAttribute="bottom" constant="27" id="V7T-t6-gpu"/>
                             <constraint firstItem="jrl-Ib-tKt" firstAttribute="top" secondItem="LgX-QC-EbC" secondAttribute="top" id="V9a-ix-LpF"/>
@@ -615,6 +626,7 @@
                         <outlet property="LableEmail" destination="Efh-rz-cNh" id="SKf-Yc-tVF"/>
                         <outlet property="LableID" destination="Nat-f7-dfC" id="Y7Q-GG-SDE"/>
                         <outlet property="prescription" destination="32z-Uq-TUf" id="2cu-Wu-Pr5"/>
+                        <outlet property="statusLable" destination="Ymc-ro-sZC" id="pvx-pf-Hmn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HEc-pV-Jtv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
