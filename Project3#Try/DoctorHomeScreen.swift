@@ -23,9 +23,15 @@ class DoctorHomeScreen: UIViewController , UITableViewDelegate, UITableViewDataS
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         cell.textLabel?.text = patientList[indexPath.row].pName
         cell.detailTextLabel?.text = patientList[indexPath.row].pId
-        print(patientList)
+//        print(patientList)
         return cell
     }
+    // Override to support conditional editing of the table view.
+   func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        // Return false if you do not want the specified item to be editable.
+        return true
+    }
+    
     
 
     @IBOutlet weak var patientsTable: UITableView!

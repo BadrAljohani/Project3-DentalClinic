@@ -1,16 +1,10 @@
-//
-//  PatientDetals.swift
-//  Project3#Try
-//
-//  Created by khalid ali on 18/04/1443 AH.
-//
 
 import UIKit
-import CoreData
+//import CoreData
 
 class PatientDetals: UIViewController {
-    
-    var patient1 = [Patients]()
+    var drName = ""
+    var patientsArray = [Patients]()
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
@@ -20,14 +14,41 @@ class PatientDetals: UIViewController {
 //    var phoneNuber:String = ""
 //    var issue:String = ""
 //    var status : String = ""
-    
-    @IBOutlet weak var statusLable: UILabel!
-    
-    @IBAction func DoctorSubmit(_ sender: UIButton) {
+    func fetchFromeDB(){
         
+        let request = Patients.fetchRequest()
+        request.predicate = NSPredicate (format: "drName==\(drName)")
+        do {
+            patientsArray = try context.fetch(request)
+        }catch{
+            print("Unable to fetch data from DB")
+        }
+    }
+    func fillDetails(){
+        if let patient = patientsArray.first{
+            LabelName.text = patient.pName
+            LableID.text = patient.pId
+            Labelphone.text = patient.phoneNumber
+            LableEmail.text = patient.email
+//            prescription.text = patient.consult
+            LableComlanin.text = patient.issue
+//          statusLable.text = patient.condition
+        }
+    }
+    @IBAction func DoctorSubmit(_ sender: UIButton) {
+//        let newpatient = patientsArray(context: context)
+//        newpatient.name = textStudentName.text!
+        
+        // Save Context
+        do { try! context.save() }
+        
+        // Fetch data from DB again
+//        fetchDataFromDB()
         
     }
+        
     
+
     @IBAction func complete(_ sender: Any) {
         
 //        
@@ -38,7 +59,7 @@ class PatientDetals: UIViewController {
 //        }
 
     }
-    
+    @IBOutlet weak var statusLable: UILabel!
     @IBOutlet weak var prescription: UITextView!
     @IBOutlet weak var LableComlanin: UILabel!
     @IBOutlet weak var LableEmail: UILabel!
@@ -50,7 +71,8 @@ class PatientDetals: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        fetchFromeDB()
+        fillDetails()
         
         
         
@@ -59,30 +81,30 @@ class PatientDetals: UIViewController {
     
    // Labelphone.text = ppp
     
-    func getDector (drName : String?) {
-        if let drName = drName{
-        let fetchRequest : NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "Patients")
-        
-        fetchRequest.predicate = NSPredicate (format: "drName = %@", drName)
-        do{
-            let fetchPatients = try context.fetch(fetchRequest)
-            if fetchPatients.indices.contains(0){
-                let mypatient = fetchPatients[0] as! Patients
-                print(mypatient.drName ?? "not found")
-                
-//                name contains 'Dr Ahmad' OR 'Dr Mohamad'"
-                
-            }else{
-                print(" iiiii ")
-            }
-        } catch {
-            print("ERROr Fetch user")
-        }
-    }else{
-        print("filed")
-    }
-        
-    }
+//    func getDector (drName : String?) {
+//        if let drName = drName{
+//        let fetchRequest : NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "Patients")
+//
+//        fetchRequest.predicate = NSPredicate (format: "drName = %@", drName)
+//        do{
+//            let fetchPatients = try context.fetch(fetchRequest)
+//            if fetchPatients.indices.contains(0){
+//                let mypatient = fetchPatients[0] as! Patients
+//                print(mypatient.drName ?? "not found")
+//
+////                name contains 'Dr Ahmad' OR 'Dr Mohamad'"
+//
+//            }else{
+//                print(" iiiii ")
+//            }
+//        } catch {
+//            print("ERROr Fetch user")
+//        }
+//    }else{
+//        print("filed")
+//    }
+//
+//    }
     
 
     /*
