@@ -91,16 +91,19 @@ class ViewController: UIViewController , UIImagePickerControllerDelegate & UINav
         print(newPatient.pName)
         
         
-        self.navigationController?.popViewController(animated: true)
+        dismiss(animated: true, completion: nil)
     }
+    
+    
 
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 //        let patientD = storyboard?.instantiateViewController(withIdentifier: "pPatientDetalsVCId") as! PatientDetals
         
         // send patiant data to PatiantDetails
-        if segue.identifier == "s"{
-            let patiantD = segue.destination as! PatientDetals
-          //  patiantD.pName =
-        }
+//        if segue.identifier == "s"{
+//            let patiantD = segue.destination as! PatientDetals
+//          //  patiantD.pName =
+//        }
     }
-}
+
+    
