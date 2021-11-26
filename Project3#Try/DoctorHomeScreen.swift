@@ -44,7 +44,7 @@ class DoctorHomeScreen: UIViewController , UITableViewDelegate, UITableViewDataS
 
     do {
         patientList =  try! context.fetch(request)
-        print(patientList)
+//        print(patientList)
         
     } catch {
         print("enable to get data from DB")

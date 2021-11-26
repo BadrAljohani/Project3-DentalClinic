@@ -4,7 +4,7 @@ import UIKit
 import CoreData
 
 
-class ViewController: UIViewController , UIImagePickerControllerDelegate & UINavigationControllerDelegate {
+class ViewController: UIViewController {
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
@@ -94,16 +94,15 @@ class ViewController: UIViewController , UIImagePickerControllerDelegate & UINav
         self.dismiss(animated: true)
            
         
-        self.navigationController?.popViewController(animated: true)
     }
 
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 //        let patientD = storyboard?.instantiateViewController(withIdentifier: "pPatientDetalsVCId") as! PatientDetals
         
         // send patiant data to PatiantDetails
-        if segue.identifier == "s"{
-            let patiantD = segue.destination as! PatientDetals
+//        if segue.identifier == "s"{
+//            let patiantD = segue.destination as! PatientDetals
           //  patiantD.pName =
         }
-    }
-}
+    
+

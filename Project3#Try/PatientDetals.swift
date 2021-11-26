@@ -12,14 +12,15 @@ class PatientDetals: UIViewController {
     
     var ppp: Patients?
     
+    
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
-//    var pName:String = ""
-//    var pId:String = ""
-//    var email:String = ""
-//    var phoneNuber:String = ""
-//    var issue:String = ""
-//    var status : String = ""
+    var pName:String = ""
+    var pId:String = ""
+    var email:String = ""
+    var phoneNuber:String = ""
+    var issue:String = ""
+    var status : String = ""
     
     @IBOutlet weak var statusLable: UILabel!
     
