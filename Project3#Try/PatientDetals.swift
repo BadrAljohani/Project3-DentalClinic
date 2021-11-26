@@ -10,7 +10,7 @@ import CoreData
 
 class PatientDetals: UIViewController {
     
-    var ppp: Patients?
+    var patient1 = [Patients]()
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
@@ -29,13 +29,14 @@ class PatientDetals: UIViewController {
     }
     
     @IBAction func complete(_ sender: Any) {
-//        UserDefaults.standard.set(complete.isOn, forKey: "Status")
+        
+//        
 //        if (complete.isOn){
 //            statusLable.text = "Complete"
 //        } else {
 //            statusLable.text = "Not Complete"
 //        }
-//
+
     }
     
     @IBOutlet weak var prescription: UITextView!

@@ -46,8 +46,12 @@ class ShowViewController: UIViewController {
         navigationController?.show(trancfer, sender: self)
     }
     
+    @IBOutlet weak var textResult: UITextField!
     @IBAction func showResult(_ sender: UIButton) {
 
+        let resultVC = storyboard?.instantiateViewController(withIdentifier: "patientID") as! PatientResult
+        resultVC.pId = textResult.text!
+        navigationController?.show(resultVC, sender: self)
         
     }
 
