@@ -57,7 +57,7 @@ class ShowPatientDetails: UIViewController , UICollectionViewDelegate , UICollec
         trancfer.email = item.email ?? ""
         trancfer.phoneNuber = item.phoneNumber ?? ""
         trancfer.issue = item.issue ?? ""
-
+       
 
         
         navigationController?.pushViewController(trancfer, animated: true)
@@ -90,7 +90,10 @@ class ShowPatientDetails: UIViewController , UICollectionViewDelegate , UICollec
         // Do any additional setup after loading the view.
     }
     
-    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        fetchFromDBpatients()
+    }
     
     
 

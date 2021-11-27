@@ -61,29 +61,10 @@ class ShowViewController: UIViewController {
     @IBOutlet weak var DoctorFilter: UITextField!
     @IBAction func ButtonDoctorPatients(_ sender: UIButton) {
         
-//        let DoctorList = patinet
-//
-//           DoctorList.drName = DoctorFilter.text
-//        DoctorList.id =DoctorFilter.text
-//        do { try! context.save()}
-//        fetchFromDBpatients()
-//        print(patinet)
-//    }
-//    func  {
-//        let filterBya = NSPredicate(format: "drName CONTAINS 'Dr Ahmad' OR 'Dr Mohamad'")
-//
-//}
-//       
-//                let filterByA = NSPredicate(format: "name CONTAINS[cd]  'A'")
-//                request.predicate = filterByA
-//    
-//        
-//
-//    
-//        navigationController?.popViewController(animated: true)
-//        
-//         navigationController?.pushViewController(DoctorHomeScreen, animated: true)
-//
+        let trancfer = storyboard?.instantiateViewController(withIdentifier: "ShowPatientDetails") as! ShowPatientDetails
+//        trancfer.DocName = DoctorFilter.text ?? ""
+        
+        navigationController?.pushViewController(trancfer, animated: true)
 
 
 }

@@ -14,8 +14,10 @@ class PatientResult: UIViewController {
         @IBOutlet weak var patientId: UILabel!
         @IBOutlet weak var consultation: UITextView!
         
-        
-        var patientsArray = [Patients]()
+    @IBOutlet weak var lblconselt: UILabel!
+    
+    @IBOutlet weak var lblstates: UILabel!
+    var patientsArray = [Patients]()
         
         // GET THE HANDLE FOR DB
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
@@ -28,6 +30,8 @@ class PatientResult: UIViewController {
             request.predicate = NSPredicate (format: "pId==\(pId)")
             do {
                 patientsArray = try context.fetch(request)
+             
+                try context.save()
             } catch {
                 print ("Unable to fetch data from DB")
             }
@@ -38,6 +42,9 @@ class PatientResult: UIViewController {
             if let patient = patientsArray.first {
                 patientName.text = patient.pName
                 patientId.text = patient.pId
+                consultation.text = patient.issue
+                lblconselt.text = patient.consult
+                lblstates.text = patient.complete
             }
         }
         
