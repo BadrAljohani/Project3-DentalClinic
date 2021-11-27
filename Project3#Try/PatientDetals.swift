@@ -126,15 +126,6 @@ class PatientDetals: UIViewController {
             } catch {
                 print ("Unable to fetch data from DB")
             }
-            
-            
-            
-        
-            
-            
-            
-            
-            
         })
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: nil)
