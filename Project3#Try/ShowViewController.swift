@@ -11,6 +11,8 @@ class ShowViewController: UIViewController {
 
 //    var drArray = [Patients]()
     
+    @IBOutlet weak var textFieldID: UITextField!
+    
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     var patinet = [Patients]()
@@ -47,6 +49,11 @@ class ShowViewController: UIViewController {
     }
     
     @IBAction func showResult(_ sender: UIButton) {
+        let trancfer = storyboard?.instantiateViewController(withIdentifier: "PatientResult") as! PatientResult
+        trancfer.pId = textFieldID.text ?? ""
+        
+        navigationController?.pushViewController(trancfer, animated: true)
+        
 
         
     }

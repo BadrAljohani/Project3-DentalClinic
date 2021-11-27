@@ -13,5 +13,6 @@ class CollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var patientID: UILabel!
     @IBOutlet weak var phoneNumber: UILabel!
     @IBOutlet weak var patientEmail: UILabel!
+    @IBOutlet weak var buttonDelete: UIButton!
     
 }

@@ -26,24 +26,47 @@ class ShowPatientDetails: UIViewController , UICollectionViewDelegate , UICollec
         cell.phoneNumber.text = patientArray[indexPath.row].phoneNumber
         cell.patientEmail.text = patientArray[indexPath.row].email
         
+        cell.buttonDelete.tag = indexPath.row
+        cell.buttonDelete.addTarget(self, action: #selector(delete1), for: .touchUpInside)
         return cell
     }
+    
+    @objc func delete1(sender:UIButton) {
+        let itemToDelete = patientArray[sender.tag]
+        self.context.delete(itemToDelete)
+        do { try!
+            self.context.save()
+            self.fetchFromDBpatients()
+        }
+    }
+
     
     @IBOutlet weak var collectionView: UICollectionView!
     
     
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "trancfer", sender: self)
-        cruntindex = indexPath.row
+        
+        let item = patientArray[indexPath.row]
+        
+        
+        
+        let trancfer = storyboard?.instantiateViewController(withIdentifier: "PatientDetals") as! PatientDetals
+        trancfer.pName = item.pName ?? ""
+        trancfer.pId = item.pId ?? ""
+        trancfer.email = item.email ?? ""
+        trancfer.phoneNuber = item.phoneNumber ?? ""
+        trancfer.issue = item.issue ?? ""
+
+
+        
+        navigationController?.pushViewController(trancfer, animated: true)
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let indexP = collectionView.indexPathsForVisibleItems
-        let details = segue.destination as! PatientDetals
-//        details.LabelName.text = patientArray[indexP].pName
-        
-    }
+   
+    
+    
+    
     
     
     
@@ -53,7 +76,7 @@ class ShowPatientDetails: UIViewController , UICollectionViewDelegate , UICollec
 
     do {
         patientArray =  try! context.fetch(request)
-        
+        collectionView.reloadData()
     } catch {
         print("enable to get data from DB")
     }

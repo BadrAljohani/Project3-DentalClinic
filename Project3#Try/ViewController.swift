@@ -61,15 +61,15 @@ class ViewController: UIViewController {
         let indexForDoctor = segmentDoctor.selectedSegmentIndex
         if (indexForDoctor == 0) {
             print("Dr Ahmad")
-            let pt = Patients(context: context)
-            pt.drName = "Dr Ahmad"
+//            let pt = Patients(context: context)
+//            pt.drName = "Dr Ahmad"
             // save in data
 //            fetchFromDBpatients()
         }
         else if (indexForDoctor == 1) {
             print("Dr Mohammad")
-            let  pt1 = Patients(context: context)
-            pt1.drName = "Dr Mohammad"
+//            let  pt1 = Patients(context: context)
+//            pt1.drName = "Dr Mohammad"
             // save in data
 //            fetchFromDBpatients()
         }

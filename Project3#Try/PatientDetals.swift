@@ -10,7 +10,7 @@ import CoreData
 
 class PatientDetals: UIViewController {
     
-    var ppp: Patients?
+    var patient11 = [Patients]()
     
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
@@ -51,7 +51,11 @@ class PatientDetals: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        LabelName.text = pName
+        LableID.text = pId
+        Labelphone.text = phoneNuber
+        LableEmail.text = email
+        LableComlanin.text = issue
         
         
         // Do any additional setup after loading the view.
@@ -59,30 +63,72 @@ class PatientDetals: UIViewController {
     
    // Labelphone.text = ppp
     
-    func getDector (drName : String?) {
-        if let drName = drName{
-        let fetchRequest : NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "Patients")
+    @IBAction func buttonUpdate(_ sender: UIButton) {
+        let alert = UIAlertController(title: "Edit", message: nil, preferredStyle: .alert)
+        alert.addTextField()
+        alert.addTextField()
+        let textBox = alert.textFields![0]
+//        textBox.text = patient11[inedx.row].pName
+        let saveAction = UIAlertAction(title: "Save", style: .default, handler: { action in
+//
+//            self.patient11[indexPath.row].name = textBox.text
+//
+//            do { try!
+//                self.context.save()
+//                self.fetchFromDBpatients()
+            })
         
-        fetchRequest.predicate = NSPredicate (format: "drName = %@", drName)
-        do{
-            let fetchPatients = try context.fetch(fetchRequest)
-            if fetchPatients.indices.contains(0){
-                let mypatient = fetchPatients[0] as! Patients
-                print(mypatient.drName ?? "not found")
-                
-//                name contains 'Dr Ahmad' OR 'Dr Mohamad'"
-                
-            }else{
-                print(" iiiii ")
-            }
-        } catch {
-            print("ERROr Fetch user")
-        }
-    }else{
-        print("filed")
+        let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: nil)
+//
+        alert.addAction(saveAction)
+        alert.addAction(cancelAction)
+        present(alert, animated: true, completion: nil)
     }
+    
+    func fetchFromDBpatients() {
         
+    let request = Patients.fetchRequest()
+    do {
+        patient11 =  try! context.fetch(request)
+        
+    } catch {
+        print("enable to get data from DB")
     }
+}
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+//    func getDector (drName : String?) {
+//        if let drName = drName{
+//        let fetchRequest : NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "Patients")
+//
+//        fetchRequest.predicate = NSPredicate (format: "drName = %@", drName)
+//        do{
+//            let fetchPatients = try context.fetch(fetchRequest)
+//            if fetchPatients.indices.contains(0){
+//                let mypatient = fetchPatients[0] as! Patients
+//                print(mypatient.drName ?? "not found")
+//
+////                name contains 'Dr Ahmad' OR 'Dr Mohamad'"
+//
+//            }else{
+//                print(" iiiii ")
+//            }
+//        } catch {
+//            print("ERROr Fetch user")
+//        }
+//    }else{
+//        print("filed")
+//    }
+//
+//    }
     
 
     /*
@@ -95,4 +141,7 @@ class PatientDetals: UIViewController {
     }
     */
 
+
+
+                                       
 }
