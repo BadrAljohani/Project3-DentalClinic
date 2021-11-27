@@ -30,6 +30,20 @@ class DoctorHomeScreen: UIViewController , UITableViewDelegate, UITableViewDataS
 
     @IBOutlet weak var patientsTable: UITableView!
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "trancfer", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let index1 = tableView.indexPathForSelectedRow
+        let trancferVC = segue.destination as! PatientDetals
+        trancferVC.LabelName.text = patientList[index1!.row].pName
+        trancferVC.LableID.text = patientList[index1!.row].pId
+        trancferVC.Labelphone.text = patientList[index1!.row].phoneNumber
+        trancferVC.LableEmail.text = patientList[index1!.row].email
+        trancferVC.LableComlanin.text = patientList[index1!.row].consult
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
