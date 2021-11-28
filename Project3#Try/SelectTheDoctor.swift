@@ -39,9 +39,8 @@ class SelectTheDoctor: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         drAhmadImage.isUserInteractionEnabled = true
-//        drMohammadImage.isUserInteractionEnabled = true
+        
         let drAhmad = UITapGestureRecognizer(target: self, action: #selector(selectTheDrAhmad(_:)))
-//        let drMohammad = UITapGestureRecognizer.init(target: self, action: #selector(selectTheDrMohammad(_:)))
         
     }
     

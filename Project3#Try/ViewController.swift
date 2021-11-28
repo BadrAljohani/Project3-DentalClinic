@@ -64,7 +64,7 @@ class ViewController: UIViewController {
         if ((textFieldName.text) != nil) {
 
         }
-  
+  //MARK: add to DB
         
 //        let addPatientsva0 = textFieldName.text!
         let newPatient = Patients(context:context)
@@ -80,23 +80,12 @@ class ViewController: UIViewController {
             fetchFromDBpatients()
         print("it is in dataBase")
         
-        print(newPatient.pName)
+//        print(newPatient.pName)
         
         self.dismiss(animated: true)
            
         
         dismiss(animated: true, completion: nil)
     }
-    
-    
 
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        let patientD = storyboard?.instantiateViewController(withIdentifier: "pPatientDetalsVCId") as! PatientDetals
-        
-        // send patiant data to PatiantDetails
-//        if segue.identifier == "s"{
-//            let patiantD = segue.destination as! PatientDetals
-          //  patiantD.pName =
-        }
-    
-
+}

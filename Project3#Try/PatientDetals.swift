@@ -49,7 +49,6 @@ class PatientDetals: UIViewController {
                     statusLable.text = "Not Complete"
                     isComplete = "Not Complete"
                 }
-        
     }
 
     @IBOutlet weak var prescription: UITextView!
@@ -71,14 +70,12 @@ class PatientDetals: UIViewController {
         Labelphone.text = phoneNuber
         LableEmail.text = email
         LableComlanin.text = issue
-        
-        
-        // Do any additional setup after loading the view.
     }
     
-    // Labelphone.text = ppp
+    //MARK: Update Email and Phonenumber .
     
     @IBAction func buttonUpdate(_ sender: UIButton) {
+        
         let alert = UIAlertController(title: "Edit Email", message: nil, preferredStyle: .alert)
         alert.addTextField()
         
@@ -96,8 +93,6 @@ class PatientDetals: UIViewController {
             } catch {
                 print ("Unable to fetch data from DB")
             }
-            
-            
         })
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: nil)
@@ -132,9 +127,6 @@ class PatientDetals: UIViewController {
         alert.addAction(cancelAction)
         present(alert, animated: true, completion: nil)
     }
-    
-    
-
     func fetchFromDBpatients() {
         
         let request = Patients.fetchRequest()
@@ -145,19 +137,4 @@ class PatientDetals: UIViewController {
             print("enable to get data from DB")
         }
     }
-    
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
-    
-    
-    
 }
