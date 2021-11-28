@@ -8,6 +8,7 @@
 import UIKit
 
 class PatientResult: UIViewController {
+    
     var pId = ""
         
         @IBOutlet weak var patientName: UILabel!
@@ -55,3 +56,4 @@ class PatientResult: UIViewController {
             fillDetails()
         }
     }
+}

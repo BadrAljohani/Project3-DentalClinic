@@ -26,6 +26,12 @@ class DoctorHomeScreen: UIViewController , UITableViewDelegate, UITableViewDataS
         //print(patientList)
         return cell
     }
+    // Override to support conditional editing of the table view.
+   func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        // Return false if you do not want the specified item to be editable.
+        return true
+    }
+    
     
 
     @IBOutlet weak var patientsTable: UITableView!

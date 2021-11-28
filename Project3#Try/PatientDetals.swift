@@ -1,12 +1,6 @@
-//
-//  PatientDetals.swift
-//  Project3#Try
-//
-//  Created by khalid ali on 18/04/1443 AH.
-//
 
 import UIKit
-import CoreData
+//import CoreData
 
 class PatientDetals: UIViewController {
     
@@ -44,6 +38,7 @@ class PatientDetals: UIViewController {
         
         
     }
+        
     
     @IBAction func complete(_ sender: Any) {
         
@@ -56,7 +51,7 @@ class PatientDetals: UIViewController {
                 }
         
     }
-    
+    @IBOutlet weak var statusLable: UILabel!
     @IBOutlet weak var prescription: UITextView!
     @IBOutlet weak var LableComlanin: UILabel!
     @IBOutlet weak var LableEmail: UILabel!
@@ -68,6 +63,8 @@ class PatientDetals: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        fetchFromeDB()
+        fillDetails()
         
         LabelName.text = pName
         LableID.text = pId
