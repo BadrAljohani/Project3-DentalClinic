@@ -21,20 +21,16 @@ class ShowViewController: UIViewController {
         let request = Patients.fetchRequest()
         
 
-        //Filtering
-        let filterDr = NSPredicate(format: "name contains 'Dr Ahmad' OR 'Dr Mohamad'")
-        request.predicate = filterDr
+//        //Filtering
+//        let filterDr = NSPredicate(format: "name contains 'Dr Ahmad' OR 'Dr Mohamad'")
+//        request.predicate = filterDr
 
         
         do {
             try! patinet = context.fetch(request)
             
         }
-//    do {
-//        patientArray =  try! context.fetch(request)
-//    } catch {
-//        print("enable to get data from DB")
-//    }
+
 }
     override func viewDidLoad() {
         super.viewDidLoad()

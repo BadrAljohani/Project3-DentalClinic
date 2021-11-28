@@ -30,7 +30,8 @@ class ShowPatientDetails: UIViewController , UICollectionViewDelegate , UICollec
         cell.buttonDelete.addTarget(self, action: #selector(delete1), for: .touchUpInside)
         return cell
     }
-    
+      //MARK: delete item from DB
+
     @objc func delete1(sender:UIButton) {
         let itemToDelete = patientArray[sender.tag]
         self.context.delete(itemToDelete)
