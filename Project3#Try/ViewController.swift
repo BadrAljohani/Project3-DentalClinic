@@ -73,9 +73,7 @@ class ViewController: UIViewController {
         newPatient.email = textFieldEmail.text
         newPatient.phoneNumber = textFieldNumber.text
         newPatient.issue = issue.text
-        newPatient.drName = docName
-    
-        
+        newPatient.drName = docName        
         do {
             try! context.save()
         }

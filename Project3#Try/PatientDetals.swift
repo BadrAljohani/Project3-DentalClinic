@@ -51,7 +51,7 @@ class PatientDetals: UIViewController {
                 }
         
     }
-    @IBOutlet weak var statusLable: UILabel!
+
     @IBOutlet weak var prescription: UITextView!
     @IBOutlet weak var LableComlanin: UILabel!
     @IBOutlet weak var LableEmail: UILabel!
@@ -63,8 +63,8 @@ class PatientDetals: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        fetchFromeDB()
-        fillDetails()
+        fetchFromDBpatients()
+//        fillDetails()
         
         LabelName.text = pName
         LableID.text = pId
@@ -145,40 +145,6 @@ class PatientDetals: UIViewController {
             print("enable to get data from DB")
         }
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    //    func getDector (drName : String?) {
-    //        if let drName = drName{
-    //        let fetchRequest : NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "Patients")
-    //
-    //        fetchRequest.predicate = NSPredicate (format: "drName = %@", drName)
-    //        do{
-    //            let fetchPatients = try context.fetch(fetchRequest)
-    //            if fetchPatients.indices.contains(0){
-    //                let mypatient = fetchPatients[0] as! Patients
-    //                print(mypatient.drName ?? "not found")
-    //
-    ////                name contains 'Dr Ahmad' OR 'Dr Mohamad'"
-    //
-    //            }else{
-    //                print(" iiiii ")
-    //            }
-    //        } catch {
-    //            print("ERROr Fetch user")
-    //        }
-    //    }else{
-    //        print("filed")
-    //    }
-    //
-    //    }
     
     
     /*

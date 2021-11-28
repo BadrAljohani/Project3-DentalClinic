@@ -57,7 +57,6 @@ class ShowPatientDetails: UIViewController , UICollectionViewDelegate , UICollec
         trancfer.email = item.email ?? ""
         trancfer.phoneNuber = item.phoneNumber ?? ""
         trancfer.issue = item.issue ?? ""
-
         
         navigationController?.pushViewController(trancfer, animated: true)
     }
