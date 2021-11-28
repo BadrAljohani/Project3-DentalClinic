@@ -23,7 +23,7 @@ class DoctorHomeScreen: UIViewController , UITableViewDelegate, UITableViewDataS
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         cell.textLabel?.text = patientList[indexPath.row].pName
         cell.detailTextLabel?.text = patientList[indexPath.row].pId
-//        print(patientList)
+        //print(patientList)
         return cell
     }
     // Override to support conditional editing of the table view.
@@ -35,6 +35,20 @@ class DoctorHomeScreen: UIViewController , UITableViewDelegate, UITableViewDataS
     
 
     @IBOutlet weak var patientsTable: UITableView!
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "trancfer", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let index1 = tableView.indexPathForSelectedRow
+        let trancferVC = segue.destination as! PatientDetals
+        trancferVC.LabelName.text = patientList[index1!.row].pName
+        trancferVC.LableID.text = patientList[index1!.row].pId
+        trancferVC.Labelphone.text = patientList[index1!.row].phoneNumber
+        trancferVC.LableEmail.text = patientList[index1!.row].email
+        trancferVC.LableComlanin.text = patientList[index1!.row].consult
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,6 +64,8 @@ class DoctorHomeScreen: UIViewController , UITableViewDelegate, UITableViewDataS
 
     do {
         patientList =  try! context.fetch(request)
+//        print(patientList)
+        
     } catch {
         print("enable to get data from DB")
     }

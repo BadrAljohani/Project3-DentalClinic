@@ -4,12 +4,13 @@ import UIKit
 import CoreData
 
 
-class ViewController: UIViewController , UIImagePickerControllerDelegate & UINavigationControllerDelegate {
+class ViewController: UIViewController {
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     var isDoctorsAdded = false
-    
+    var docName = ""
+    var isDoctorsA = "0"
     var patientArray = [Patients]()
 //    var doctorsArray = [Doctors]()
     
@@ -18,7 +19,8 @@ class ViewController: UIViewController , UIImagePickerControllerDelegate & UINav
     @IBOutlet weak var textFieldNumber: UITextField!
     @IBOutlet weak var textFieldEmail: UITextField!
     
-    @IBOutlet weak var segmentDoctor: UISegmentedControl!
+    @IBOutlet weak var lbldecotor: UILabel!
+    
     @IBOutlet weak var issue: UITextView!
     
     override func viewDidLoad() {
@@ -27,7 +29,7 @@ class ViewController: UIViewController , UIImagePickerControllerDelegate & UINav
         textFieldID.keyboardType = .numberPad
         textFieldEmail.keyboardType = .emailAddress
         textFieldNumber.keyboardType = .numberPad
-        
+        lbldecotor.text = docName
         
         if (isDoctorsAdded == false) {
             
@@ -52,28 +54,17 @@ class ViewController: UIViewController , UIImagePickerControllerDelegate & UINav
         print("enable to get data from DB")
     }
 }
+    
+    @IBAction func btndissmes(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     @IBAction func addOnPreesed(_ sender: Any) {
         
         if ((textFieldName.text) != nil) {
 
         }
-        
-        let indexForDoctor = segmentDoctor.selectedSegmentIndex
-        if (indexForDoctor == 0) {
-            print("Dr Ahmad")
-            let pt = Patients(context: context)
-            pt.drName = "Dr Ahmad"
-            // save in data
-//            fetchFromDBpatients()
-        }
-        else if (indexForDoctor == 1) {
-            print("Dr Mohammad")
-            let  pt1 = Patients(context: context)
-            pt1.drName = "Dr Mohammad"
-            // save in data
-//            fetchFromDBpatients()
-        }
-        
+  
         
 //        let addPatientsva0 = textFieldName.text!
         let newPatient = Patients(context:context)
@@ -82,6 +73,9 @@ class ViewController: UIViewController , UIImagePickerControllerDelegate & UINav
         newPatient.email = textFieldEmail.text
         newPatient.phoneNumber = textFieldNumber.text
         newPatient.issue = issue.text
+        newPatient.drName = docName
+    
+        
         do {
             try! context.save()
         }
@@ -90,6 +84,8 @@ class ViewController: UIViewController , UIImagePickerControllerDelegate & UINav
         
         print(newPatient.pName)
         
+        self.dismiss(animated: true)
+           
         
         dismiss(animated: true, completion: nil)
     }
@@ -102,8 +98,7 @@ class ViewController: UIViewController , UIImagePickerControllerDelegate & UINav
         // send patiant data to PatiantDetails
 //        if segue.identifier == "s"{
 //            let patiantD = segue.destination as! PatientDetals
-//          //  patiantD.pName =
-//        }
-    }
-
+          //  patiantD.pName =
+        }
     
+
