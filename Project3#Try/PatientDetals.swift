@@ -22,6 +22,7 @@ class PatientDetals: UIViewController {
     var issue:String = ""
     var status : String = ""
     var isComplete : String = "Complete"
+    var isDoctorName : String = ""
     
     @IBOutlet weak var switsh: UISwitch!
     @IBOutlet weak var statusLable: UILabel!

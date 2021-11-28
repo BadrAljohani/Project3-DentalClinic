@@ -10,7 +10,7 @@ import UIKit
 class ShowPatientDetails: UIViewController , UICollectionViewDelegate , UICollectionViewDataSource {
     
     var cruntindex = 0
-    
+    var doctorName11 = ""
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
      var patientArray = [Patients]()
@@ -25,7 +25,7 @@ class ShowPatientDetails: UIViewController , UICollectionViewDelegate , UICollec
         cell.patientID.text = patientArray[indexPath.row].pId
         cell.phoneNumber.text = patientArray[indexPath.row].phoneNumber
         cell.patientEmail.text = patientArray[indexPath.row].email
-        
+        cell.DoctorName.text = patientArray[indexPath.row].drName
         cell.buttonDelete.tag = indexPath.row
         cell.buttonDelete.addTarget(self, action: #selector(delete1), for: .touchUpInside)
         return cell
@@ -57,7 +57,6 @@ class ShowPatientDetails: UIViewController , UICollectionViewDelegate , UICollec
         trancfer.email = item.email ?? ""
         trancfer.phoneNuber = item.phoneNumber ?? ""
         trancfer.issue = item.issue ?? ""
-       
 
         
         navigationController?.pushViewController(trancfer, animated: true)

@@ -62,6 +62,7 @@ class ShowViewController: UIViewController {
     @IBAction func ButtonDoctorPatients(_ sender: UIButton) {
         
         let trancfer = storyboard?.instantiateViewController(withIdentifier: "ShowPatientDetails") as! ShowPatientDetails
+        
 //        trancfer.DocName = DoctorFilter.text ?? ""
         
         navigationController?.pushViewController(trancfer, animated: true)
