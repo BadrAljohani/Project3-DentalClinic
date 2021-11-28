@@ -56,4 +56,4 @@ class PatientResult: UIViewController {
             fillDetails()
         }
     }
-}
+

@@ -214,9 +214,8 @@
                                                     <state key="normal" title="Button"/>
                                                     <buttonConfiguration key="configuration" style="plain" title="Delete"/>
                                                 </button>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cfL-iX-s7B">
-                                                    <rect key="frame" x="35" y="148" width="42" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cfL-iX-s7B">
+                                                    <rect key="frame" x="34" y="148" width="41.5" height="21"/>
                                                     <color key="backgroundColor" systemColor="tintColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -227,7 +226,9 @@
                                                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="qhN-t3-170" secondAttribute="trailing" constant="20" symbolic="YES" id="05C-Xr-YkT"/>
                                                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="tNh-Rj-ZyK" secondAttribute="trailing" constant="20" symbolic="YES" id="4ft-J2-nQ7"/>
                                                 <constraint firstItem="VUl-V0-vBZ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="qhN-t3-170" secondAttribute="trailing" constant="8" symbolic="YES" id="60r-Nz-bAn"/>
+                                                <constraint firstItem="cfL-iX-s7B" firstAttribute="leading" secondItem="7yr-Pj-WgX" secondAttribute="leading" id="7K5-Iz-qUn"/>
                                                 <constraint firstItem="VUl-V0-vBZ" firstAttribute="centerY" secondItem="qhN-t3-170" secondAttribute="centerY" id="Adb-Qd-etE"/>
+                                                <constraint firstItem="cfL-iX-s7B" firstAttribute="top" secondItem="7yr-Pj-WgX" secondAttribute="bottom" constant="10" id="EbM-Tt-Kjb"/>
                                                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="7yr-Pj-WgX" secondAttribute="trailing" constant="20" symbolic="YES" id="FH9-4q-u6Y"/>
                                                 <constraint firstItem="Sf0-dV-hSC" firstAttribute="leading" secondItem="7yr-Pj-WgX" secondAttribute="leading" id="FWM-Ic-lqk"/>
                                                 <constraint firstItem="VUl-V0-vBZ" firstAttribute="trailing" secondItem="0Bg-zX-EMF" secondAttribute="trailingMargin" id="Frc-Hu-V3E"/>
@@ -458,11 +459,6 @@
                                     <action selector="ButtonDoctorPatients:" destination="D1i-W7-1PU" eventType="touchUpInside" id="hiA-mB-xJw"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Write doctor name to login" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Tbt-Wk-SQF">
-                                <rect key="frame" x="79" y="676" width="256" height="34"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tdP-3p-yvt">
                                 <rect key="frame" x="35" y="395" width="106" height="34"/>
                                 <state key="normal" title="Button"/>
@@ -493,20 +489,17 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="cTV-sJ-bxv" firstAttribute="trailing" secondItem="wyR-1L-y9M" secondAttribute="trailing" constant="153" id="4jv-wY-CgT"/>
+                            <constraint firstItem="FZw-6s-clQ" firstAttribute="top" secondItem="wyR-1L-y9M" secondAttribute="bottom" constant="125" id="5YW-HL-S7h"/>
                             <constraint firstItem="tdP-3p-yvt" firstAttribute="bottom" secondItem="h7X-Hg-rzH" secondAttribute="bottom" id="8Wh-NI-o7f"/>
                             <constraint firstItem="ynN-bB-3lf" firstAttribute="top" secondItem="cTV-sJ-bxv" secondAttribute="top" constant="25" id="8v2-oe-omW"/>
                             <constraint firstItem="cTV-sJ-bxv" firstAttribute="trailing" secondItem="FZw-6s-clQ" secondAttribute="trailing" constant="117" id="9R8-nd-aCr"/>
                             <constraint firstItem="h7X-Hg-rzH" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="tdP-3p-yvt" secondAttribute="trailing" constant="8" symbolic="YES" id="EIz-Rt-aWH"/>
-                            <constraint firstItem="Tbt-Wk-SQF" firstAttribute="centerX" secondItem="7GM-Fx-0ZH" secondAttribute="centerX" id="Id3-nb-Zom"/>
                             <constraint firstItem="FZw-6s-clQ" firstAttribute="trailing" secondItem="TYt-ow-Lzk" secondAttribute="trailing" id="TSh-2T-ebK"/>
                             <constraint firstItem="FZw-6s-clQ" firstAttribute="leading" secondItem="TYt-ow-Lzk" secondAttribute="leading" id="UXL-bZ-kdO"/>
                             <constraint firstAttribute="bottom" secondItem="wyR-1L-y9M" secondAttribute="bottom" constant="286" id="WXf-HQ-Grg"/>
                             <constraint firstItem="ynN-bB-3lf" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="wyR-1L-y9M" secondAttribute="leading" id="Wcu-yR-CXp"/>
                             <constraint firstItem="cTV-sJ-bxv" firstAttribute="trailing" secondItem="ynN-bB-3lf" secondAttribute="trailing" constant="134" id="blE-Bd-mrC"/>
-                            <constraint firstItem="Tbt-Wk-SQF" firstAttribute="top" secondItem="wyR-1L-y9M" secondAttribute="bottom" constant="66" id="dFZ-2d-jRU"/>
                             <constraint firstItem="cTV-sJ-bxv" firstAttribute="trailing" secondItem="h7X-Hg-rzH" secondAttribute="trailing" constant="99" id="kzB-aT-cyt"/>
-                            <constraint firstItem="FZw-6s-clQ" firstAttribute="top" secondItem="Tbt-Wk-SQF" secondAttribute="bottom" constant="25" id="m1E-fT-J8u"/>
-                            <constraint firstItem="Tbt-Wk-SQF" firstAttribute="leading" secondItem="cTV-sJ-bxv" secondAttribute="leading" constant="79" id="psX-KZ-bAD"/>
                             <constraint firstItem="tdP-3p-yvt" firstAttribute="top" secondItem="h7X-Hg-rzH" secondAttribute="top" id="tDj-9u-sO1"/>
                             <constraint firstItem="FZw-6s-clQ" firstAttribute="leading" secondItem="cTV-sJ-bxv" secondAttribute="leading" constant="95" id="ts4-lG-Gio"/>
                             <constraint firstItem="ynN-bB-3lf" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="cTV-sJ-bxv" secondAttribute="leading" id="uUc-zH-J2i"/>
@@ -518,7 +511,6 @@
                     <tabBarItem key="tabBarItem" title="Item" id="9Kp-lX-wXe"/>
                     <navigationItem key="navigationItem" id="AwE-eN-45L"/>
                     <connections>
-                        <outlet property="DoctorFilter" destination="Tbt-Wk-SQF" id="ntM-iW-Cq8"/>
                         <outlet property="textFieldID" destination="h7X-Hg-rzH" id="XrE-SK-QdG"/>
                     </connections>
                 </viewController>
@@ -584,22 +576,22 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="87" translatesAutoresizingMaskIntoConstraints="NO" id="qE1-5A-AZL">
-                                        <rect key="frame" x="13" y="190" width="340" height="31"/>
+                                        <rect key="frame" x="5.5" y="190" width="355" height="31"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ORc-Dz-BdX">
-                                                <rect key="frame" x="0.0" y="0.0" width="41" height="31"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone    " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ORc-Dz-BdX">
+                                                <rect key="frame" x="0.0" y="0.0" width="56" height="31"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Labelphone" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XkY-0I-vDy">
-                                                <rect key="frame" x="128" y="0.0" width="76" height="31"/>
+                                                <rect key="frame" x="143" y="0.0" width="76" height="31"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="tWq-lB-ax0">
-                                                <rect key="frame" x="291" y="0.0" width="49" height="31"/>
+                                                <rect key="frame" x="306" y="0.0" width="49" height="31"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="edit"/>
@@ -666,13 +658,13 @@
                                         <rect key="frame" x="12" y="380.5" width="342" height="140"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Consult" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uAB-nI-Xw3">
-                                                <rect key="frame" x="0.0" y="60" width="39.5" height="20.5"/>
+                                                <rect key="frame" x="0.0" y="60" width="58.5" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="32z-Uq-TUf">
-                                                <rect key="frame" x="83.5" y="10" width="258.5" height="120"/>
+                                                <rect key="frame" x="102.5" y="10" width="239.5" height="120"/>
                                                 <color key="backgroundColor" red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="0.27596153210000002" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="120" id="CWS-Md-Zoh"/>
@@ -765,7 +757,7 @@
                         <outlet property="LableEmail" destination="Efh-rz-cNh" id="SKf-Yc-tVF"/>
                         <outlet property="LableID" destination="Nat-f7-dfC" id="Y7Q-GG-SDE"/>
                         <outlet property="prescription" destination="32z-Uq-TUf" id="2cu-Wu-Pr5"/>
-                        <outlet property="statusLable" destination="tTv-n3-SjJ" id="7yi-Mi-hcR"/>
+                        <outlet property="statusLable" destination="tTv-n3-SjJ" id="gFQ-Wo-AKL"/>
                         <outlet property="switsh" destination="jrl-Ib-tKt" id="udK-J4-SqF"/>
                     </connections>
                 </viewController>
