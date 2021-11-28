@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B93458CE274D03F300276126 /* DoctorHomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93458CD274D03F300276126 /* DoctorHomeScreen.swift */; };
 		B93458D0274D071D00276126 /* PatientDetals.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93458CF274D071C00276126 /* PatientDetals.swift */; };
 		B954678B274E14A200E6745D /* PatientResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = B954678A274E14A200E6745D /* PatientResult.swift */; };
 		B954678D274ECC0E00E6745D /* SelectTheDoctor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B954678C274ECC0E00E6745D /* SelectTheDoctor.swift */; };
@@ -24,7 +23,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		B93458CD274D03F300276126 /* DoctorHomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorHomeScreen.swift; sourceTree = "<group>"; };
 		B93458CF274D071C00276126 /* PatientDetals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientDetals.swift; sourceTree = "<group>"; };
 		B954678A274E14A200E6745D /* PatientResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientResult.swift; sourceTree = "<group>"; };
 		B954678C274ECC0E00E6745D /* SelectTheDoctor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTheDoctor.swift; sourceTree = "<group>"; };
@@ -81,7 +79,6 @@
 				B954678C274ECC0E00E6745D /* SelectTheDoctor.swift */,
 				B954678A274E14A200E6745D /* PatientResult.swift */,
 				B93458CF274D071C00276126 /* PatientDetals.swift */,
-				B93458CD274D03F300276126 /* DoctorHomeScreen.swift */,
 				B97EBDE72749619E00D9E52F /* ShowViewController.swift */,
 				B97EBDDC27490E2900D9E52F /* Assets.xcassets */,
 				B97EBDDE27490E2900D9E52F /* LaunchScreen.storyboard */,
@@ -168,7 +165,6 @@
 				B97EBDD527490E2600D9E52F /* ViewController.swift in Sources */,
 				B97EBDDB27490E2600D9E52F /* Project3_Try.xcdatamodeld in Sources */,
 				B961856327512CF8000A9C2D /* ShowPatientDetails.swift in Sources */,
-				B93458CE274D03F300276126 /* DoctorHomeScreen.swift in Sources */,
 				B954678D274ECC0E00E6745D /* SelectTheDoctor.swift in Sources */,
 				B97EBDD127490E2600D9E52F /* AppDelegate.swift in Sources */,
 				B97EBDD327490E2600D9E52F /* SceneDelegate.swift in Sources */,
