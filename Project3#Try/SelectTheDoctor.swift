@@ -9,7 +9,6 @@ import UIKit
 
 class SelectTheDoctor: UIViewController {
     @IBOutlet weak var drAhmadImage: UIImageView!
-//    @IBOutlet weak var drMohammadImage: UIImageView!
     var docName = "ahmad"
     @IBOutlet weak var segment: UISegmentedControl!
     @IBAction func selectTheDrAhmad(_ sender: UITapGestureRecognizer) {
@@ -29,13 +28,6 @@ class SelectTheDoctor: UIViewController {
         }
     }
     
-    
-//    @IBAction func selectTheDrMohammad(_ sender: UITapGestureRecognizer) {
-//        let makeAppintment2 = storyboard?.instantiateViewController(withIdentifier: "Conect") as! ViewController
-//        present(makeAppintment2, animated: true, completion: nil)
-//
-//    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         drAhmadImage.isUserInteractionEnabled = true
@@ -43,10 +35,4 @@ class SelectTheDoctor: UIViewController {
         let drAhmad = UITapGestureRecognizer(target: self, action: #selector(selectTheDrAhmad(_:)))
         
     }
-    
-    
-    
-    
-    
-    
 }

@@ -25,7 +25,7 @@ class PatientDetals: UIViewController {
         let request = Patients.fetchRequest()
         
         request.predicate = NSPredicate (format: "pId==\(self.pId)")
-     
+        
         do {
             self.patient11 = try self.context.fetch(request)
             self.patient11.first?.consult = prescription.text
@@ -38,19 +38,19 @@ class PatientDetals: UIViewController {
         
         
     }
-        
+    
     
     @IBAction func complete(_ sender: Any) {
         
-                if (switsh.isOn){
-                    statusLable.text = "Complete"
-                    isComplete = "Complete"
-                } else {
-                    statusLable.text = "Not Complete"
-                    isComplete = "Not Complete"
-                }
+        if (switsh.isOn){
+            statusLable.text = "Complete"
+            isComplete = "Complete"
+        } else {
+            statusLable.text = "Not Complete"
+            isComplete = "Not Complete"
+        }
     }
-
+    
     @IBOutlet weak var prescription: UITextView!
     @IBOutlet weak var LableComlanin: UILabel!
     @IBOutlet weak var LableEmail: UILabel!
@@ -63,7 +63,7 @@ class PatientDetals: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchFromDBpatients()
-//        fillDetails()
+        //        fillDetails()
         
         LabelName.text = pName
         LableID.text = pId
@@ -85,7 +85,7 @@ class PatientDetals: UIViewController {
             let request = Patients.fetchRequest()
             
             request.predicate = NSPredicate (format: "pId==\(self.pId)")
-         
+            
             do {
                 self.patient11 = try self.context.fetch(request)
                 self.patient11.first?.email = textBox.text
@@ -110,8 +110,8 @@ class PatientDetals: UIViewController {
             
             let request = Patients.fetchRequest()
             
-           request.predicate = NSPredicate (format: "pId==\(self.pId)")
-         
+            request.predicate = NSPredicate (format: "pId==\(self.pId)")
+            
             do {
                 self.patient11 = try self.context.fetch(request)
                 self.patient11.first?.phoneNumber = textBox.text

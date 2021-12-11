@@ -12,9 +12,8 @@ class ViewController: UIViewController {
     var docName = ""
     var isDoctorsA = "0"
     var patientArray = [Patients]()
-//    var doctorsArray = [Doctors]()
     
-        @IBOutlet weak var textFieldName: UITextField!
+    @IBOutlet weak var textFieldName: UITextField!
     @IBOutlet weak var textFieldID: UITextField!
     @IBOutlet weak var textFieldNumber: UITextField!
     @IBOutlet weak var textFieldEmail: UITextField!
@@ -38,22 +37,20 @@ class ViewController: UIViewController {
             
             isDoctorsAdded = true
         }
-        
-        // Do any additional setup after loading the view.
         fetchFromDBpatients()
-
+        
     }
     
     func fetchFromDBpatients() {
         
-    let request = Patients.fetchRequest()
-    do {
-        patientArray =  try! context.fetch(request)
-        
-    } catch {
-        print("enable to get data from DB")
+        let request = Patients.fetchRequest()
+        do {
+            patientArray =  try! context.fetch(request)
+            
+        } catch {
+            print("enable to get data from DB")
+        }
     }
-}
     
     @IBAction func btndissmes(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
@@ -62,11 +59,10 @@ class ViewController: UIViewController {
     @IBAction func addOnPreesed(_ sender: Any) {
         
         if ((textFieldName.text) != nil) {
-
+            
         }
-  //MARK: add to DB
+        //MARK: add to DB
         
-//        let addPatientsva0 = textFieldName.text!
         let newPatient = Patients(context:context)
         newPatient.pName = textFieldName.text
         newPatient.pId = textFieldID.text
@@ -77,15 +73,15 @@ class ViewController: UIViewController {
         do {
             try! context.save()
         }
-            fetchFromDBpatients()
+        fetchFromDBpatients()
         print("it is in dataBase")
         
-//        print(newPatient.pName)
+        //        print(newPatient.pName)
         
         self.dismiss(animated: true)
-           
+        
         
         dismiss(animated: true, completion: nil)
     }
-
+    
 }

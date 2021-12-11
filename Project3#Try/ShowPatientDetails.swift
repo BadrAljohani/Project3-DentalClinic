@@ -13,7 +13,7 @@ class ShowPatientDetails: UIViewController , UICollectionViewDelegate , UICollec
     var doctorName11 = ""
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
-     var patientArray = [Patients]()
+    var patientArray = [Patients]()
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         patientArray.count
@@ -30,8 +30,8 @@ class ShowPatientDetails: UIViewController , UICollectionViewDelegate , UICollec
         cell.buttonDelete.addTarget(self, action: #selector(delete1), for: .touchUpInside)
         return cell
     }
-      //MARK: delete item from DB
-
+    //MARK: delete item from DB
+    
     @objc func delete1(sender:UIButton) {
         let itemToDelete = patientArray[sender.tag]
         self.context.delete(itemToDelete)
@@ -40,7 +40,7 @@ class ShowPatientDetails: UIViewController , UICollectionViewDelegate , UICollec
             self.fetchFromDBpatients()
         }
     }
-
+    
     
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -61,24 +61,15 @@ class ShowPatientDetails: UIViewController , UICollectionViewDelegate , UICollec
         
         navigationController?.pushViewController(trancfer, animated: true)
     }
-    
-   
-    
-    
-    
-    
-    
-    
-    
     func fetchFromDBpatients() {
-    let request = Patients.fetchRequest()
-
-    do {
-        patientArray =  try! context.fetch(request)
-        collectionView.reloadData()
-    } catch {
-        print("enable to get data from DB")
-    }
+        let request = Patients.fetchRequest()
+        
+        do {
+            patientArray =  try! context.fetch(request)
+            collectionView.reloadData()
+        } catch {
+            print("enable to get data from DB")
+        }
         
     }
     override func viewDidLoad() {
@@ -86,24 +77,11 @@ class ShowPatientDetails: UIViewController , UICollectionViewDelegate , UICollec
         collectionView.delegate = self
         collectionView.dataSource = self
         fetchFromDBpatients()
-        // Do any additional setup after loading the view.
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         fetchFromDBpatients()
     }
-    
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
